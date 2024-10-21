@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Cave</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Welcome to my cave!</h1>
+    <p>This is a spot in the mind of the universe!!!</p>
+    
+    <img src="images/Animals.gif" alt="Cave Image">
+
+    <h2>About This Space</h2>
+    <p>In this bullshit space I want to be edgy and gei, you know, some shitty thoughts about being emo, LoL.</p>
+
+    <h2>This Gallery has some gallery-things, feel free to watch.</h2>
+    <p>Click on the images to view them in full size!</p>
+    <div class="gallery">
+        <figure>
+            <img src="images/800px-Saint_Jerome_Writing-Caravaggio_(1605-6).jpg" alt="Saint Jerome Writing by Caravaggio" class="thumbnail">
+            <figcaption>This is a faithful photographic reproduction of a public domain work of art. <br> Author: Caravaggio (1605-6)</figcaption>
+        </figure>
+        <figure>
+            <img src="images/Vedder,_Elihu_-_The_Questioner_of_the_Sphinx_-_1836.gif" alt="The Questioner of the Sphinx by Elihu Vedder" class="thumbnail">
+            <figcaption>This is a faithful photographic reproduction of a public domain work of art. <br> Author: Elihu Vedder (1836)</figcaption>
+        </figure>
+        <figure>
+            <img src="images/PaulHermitPretiMattia_Preti's_St._Paul_the_Hermit_-_Cleveland_Museum_of_Art.jpg" alt="St. Paul the Hermit by Mattia Preti" class="thumbnail">
+            <figcaption>This is a faithful photographic reproduction of a public domain work of art. <br> Author: Mattia Preti</figcaption>
+        </figure>
+    </div>
+
+    <h2>Thoughts and Reflections</h2>
+    <p>Here are some thoughts that come to mind at this precise moment:</p>
+    <ul>
+        <li>"I thought making this page would be easier, but it turned out to be a pain in the ass."</li>
+        <li>"Right now, I don't want to think."</li>
+        <li>"This project is under construction. In the future, I'll definitely work on this fuckin' shit! I hate being a manco haciendo páginas!"</li>
+    </ul>
+
+    <footer>
+        <p>Thank you for visiting my cave!</p>
+        <p>&copy; 2024 Ervaku</p>
+    </footer>
+
+    <script>
+        // Function to enlarge image on click
+        const images = document.querySelectorAll('.thumbnail');
+        images.forEach(img => {
+            img.addEventListener('click', () => {
+                // Create a full-size image overlay
+                const overlay = document.createElement('div');
+                overlay.style.position = 'fixed';
+                overlay.style.top = '0';
+                overlay.style.left = '0';
+                overlay.style.width = '100%';
+                overlay.style.height = '100%';
+                overlay.style.backgroundColor = 'rgba(0, 0, 0, 0.8)';
+                overlay.style.display = 'flex';
+                overlay.style.justifyContent = 'center';
+                overlay.style.alignItems = 'center';
+                overlay.style.zIndex = '1000';
+
+                const fullSize = document.createElement('img');
+                fullSize.src = img.src;
+                fullSize.style.maxWidth = '90%'; // Set max width to prevent overflow
+                fullSize.style.maxHeight = '90%'; // Set max height to prevent overflow
+                fullSize.style.borderRadius = '10px'; // Optional: round the corners
+                fullSize.style.boxShadow = '0 0 10px rgba(0, 0, 0, 0.5)';
+
+                // Click to close the full-size image
+                overlay.addEventListener('click', () => {
+                    document.body.removeChild(overlay);
+                });
+
+                overlay.appendChild(fullSize);
+                document.body.appendChild(overlay);
+            });
+        });
+    </script>
+</body>
+</html>

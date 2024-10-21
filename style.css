@@ -1,0 +1,46 @@
+/* General Styling */
+body {
+    margin: 0;
+    font-family: 'Georgia', serif;
+    background-color: #222;
+    color: #eee;
+    text-align: center;
+}
+
+/* Header */
+.hero {
+    background-color: #3e206d;
+    padding: 50px 0;
+    color: white;
+}
+
+/* Sections */
+.members, .mission, .gallery, .footer {
+    margin: 40px;
+    padding: 20px;
+    background-color: #2f2f2f;
+    border-radius: 8px;
+}
+
+/* Gallery */
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.thumbnail {
+    width: 200px; /* Adjust size as needed */
+    margin: 10px;
+    border-radius: 8px;
+    cursor: pointer; /* Show pointer cursor on hover */
+    transition: transform 0.2s; /* Add a small animation */
+}
+
+.thumbnail:hover {
+    transform: scale(1.05); /* Enlarge thumbnail slightly on hover */
+}
+
+footer {
+    background-color: #1a1a1a;
+}
